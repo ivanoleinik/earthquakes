@@ -42,4 +42,4 @@ def add_earthquakes():
 
 
 if __name__ == "__main__":
-    add_earthquakes()
+    # add_earthquakes()
