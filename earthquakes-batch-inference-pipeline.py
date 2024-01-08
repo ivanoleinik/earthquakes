@@ -51,7 +51,7 @@ def inference_earthquakes():
     }
 
     monitor_df = pd.DataFrame(data)
-    monitor_fg.insert(monitor_df, write_options={"wait_for_job" : False})
+    monitor_fg.insert(monitor_df)
 
     history_df = monitor_fg.read(read_options={"use_hive": True})
 
