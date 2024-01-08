@@ -42,4 +42,5 @@ def add_earthquakes():
 
 
 if __name__ == "__main__":
+    pass
     # add_earthquakes()
