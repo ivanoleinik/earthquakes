@@ -5,7 +5,6 @@ import joblib
 import datetime
 from datetime import datetime
 import dataframe_image as dfi
-from sklearn.metrics import confusion_matrix
 from matplotlib import pyplot
 import seaborn as sns
 import requests
@@ -17,7 +16,7 @@ def inference_earthquakes():
     fs = project.get_feature_store()
 
     mr = project.get_model_registry()
-    model = mr.get_model("earthquakes_model", version=1)
+    model = mr.get_best_model("earthquakes_model", "mse", "min")
     model_mse = model.training_metrics['mse']
     model_dir = model.download()
     model = joblib.load(model_dir + "/earthquakes_model.pkl")
